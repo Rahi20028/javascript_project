@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Profile Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style src="style.css"></style>
+
+<body>
+  <div class="container">
+    <h1>GitHub Profile Dashboard</h1>
+
+    <input type="text" id="username-input" placeholder="Enter GitHub username" />
+    <button id="search-btn">Search</button>
+
+    <!-- Profile Section -->
+    <section class="profile">
+      <img id="avatar" alt="Profile Picture" />
+      <h2 id="full-name">Full Name</h2>
+      <p id="username">@username</p>
+      <p><strong>Account Created:</strong> <span id="created-at"></span></p>
+    </section>
+
+    <!-- Followers Section -->
+    <section class="followers">
+      <h3>Followers (<span id="followers-count">0</span>)</h3>
+      <ul id="followers-list"></ul>
+    </section>
+
+    <!-- Following Section -->
+    <section class="following">
+      <h3>Following (<span id="following-count">0</span>)</h3>
+      <ul id="following-list"></ul>
+    </section>
+
+    <!-- Repositories Section -->
+    <section class="repos">
+      <button id="show-repos-btn">Show Repos</button>
+      <div id="repos-section" style="display: none;">
+        <h3>Public Repositories</h3>
+        <ul id="repos-list"></ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
