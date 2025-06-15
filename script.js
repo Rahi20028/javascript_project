@@ -1,6 +1,7 @@
 document.getElementById("search-btn").addEventListener("click", () => {
     const input = document.getElementById("username-input").value.trim()
 
+
     if (input === "") {
         alert("please enter a username")
     }
@@ -15,11 +16,11 @@ async function loadProfile(username) {
         const data = await response.json()
 
 
-
         document.getElementById("followers-list").innerHTML = "";
         document.getElementById("following-list").innerHTML = "";
         document.getElementById("repos-list").innerHTML = "";
         document.getElementById("repos-section").style.display = "none";
+
 
 
 
@@ -65,6 +66,7 @@ async function Following(url) {
         document.getElementById("following-count").textContent = following.length
         const list = document.getElementById("following-list")
 
+
         following.forEach(user => {
             const li = document.createElement("li")
             li.textContent = user.login
@@ -84,9 +86,10 @@ async function Repo(url) {
         try {
             const response = await fetch(url)
             const repo = await response.json()
-
-            document.getElementById("repos-section").style.display = "block"
             const list = document.getElementById("repos-list")
+            list.innerHTML = ""
+            document.getElementById("repos-section").style.display = "block"
+
 
             repo.forEach(repositor => {
                 const a = document.createElement("a")
