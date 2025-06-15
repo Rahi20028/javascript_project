@@ -91,6 +91,7 @@ async function Repo(url) {
             repo.forEach(repositor => {
                 const a = document.createElement("a")
                 const li = document.createElement("li")
+                a.target = "_blank"
                 a.href = repositor.html_url;
                 a.textContent = repositor.name;
 

@@ -5,43 +5,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GitHub Profile Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style src="style.css"></style>
 
-<body>
-  <div class="container">
-    <h1>GitHub Profile Dashboard</h1>
-
-    <input type="text" id="username-input" placeholder="Enter GitHub username" />
-    <button id="search-btn">Search</button>
+<body class="bg-gray-100 min-h-screen px-4 py-10 flex justify-center ">
+  <div class="w-full max-w-4xl bg-white shadow-xl rounded-xl p-6 space-y-6">
+    <h1 class="text-2xl sm:text-3xl font-semibold text-center text-gray-800">GitHub Profile Dashboard</h1>
+    <div class="flex flex-col sm:flex-row items-center text-gray-800">
+      <input type="text" id="username-input" placeholder="Enter GitHub username"
+        class="w-full sm:flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      <button id="search-btn"
+        class="w-full sm:w-auto px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">Search</button>
+    </div>
 
     <!-- Profile Section -->
-    <section class="profile">
-      <img id="avatar" alt="Profile Picture" />
-      <h2 id="full-name">Full Name</h2>
-      <p id="username">@username</p>
-      <p><strong>Account Created:</strong> <span id="created-at"></span></p>
+    <section class="flex flex-col sm:flex-row items-center gap-6 mt-6">
+      <img id="avatar" class="w-28 h-28 rounded-full border-4 border-blue-400 object-cover" alt="Profile Picture" />
+      <h2 id="full-name" class="text-xl font-bold text-gray-800">Full Name</h2>
+      <p id="username" class="text-gray-600">@username</p>
+      <p class="text-sm text-gray-500"><strong>Account Created:</strong> <span id="created-at"></span></p>
     </section>
 
-    <!-- Followers Section -->
-    <section class="followers">
-      <h3>Followers (<span id="followers-count">0</span>)</h3>
-      <ul id="followers-list"></ul>
-    </section>
+    <!--follower and following section -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+      <!-- Followers Section -->
+      <section class="followers">
+        <h3 class="text-lg font-semibold text-gray-700">Followers (<span id="followers-count">0</span>)</h3>
+        <ul id="followers-list" class="mt-2 space-y-2 text-gray-700"></ul>
+      </section>
 
-    <!-- Following Section -->
-    <section class="following">
-      <h3>Following (<span id="following-count">0</span>)</h3>
-      <ul id="following-list"></ul>
-    </section>
+      <!-- Following Section -->
+      <section class="following">
+        <h3 class="text-lg font-semibold text-gray-700 ">Following (<span id="following-count">0</span>)</h3>
+        <ul id="following-list" class="mt-2 space-y-2 text-gray-700"></ul>
+      </section>
+    </div>
+
+
 
     <!-- Repositories Section -->
     <section class="repos">
-      <button id="show-repos-btn">Show Repos</button>
-      <div id="repos-section" style="display: none;">
-        <h3>Public Repositories</h3>
-        <ul id="repos-list"></ul>
+      <button id="show-repos-btn"
+        class="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition mt-4 w-full sm:w-auto mx-auto">Show
+        Repos</button>
+      <div id="repos-section" class="hidden mt-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Public Repositories</h3>
+        <ul id="repos-list" class="space-y-2 text-gray800 text-sm sm:text-base"></ul>
       </div>
     </section>
   </div>
